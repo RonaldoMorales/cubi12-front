@@ -33,9 +33,9 @@ const Auth = {
 };
 
 const Subjects = {
-  list: () => requests.get("subjects"),
-  preRequisites: () => requests.get("subjects/prerequisites-map"),
-  postRequisites: () => requests.get("subjects/postrequisites-map"),
+  list: () => requests.get("Subjects"), 
+  preRequisites: () => requests.get("Subjects/prerequisites-map"), 
+  postRequisites: () => requests.get("Subjects/postrequisites-map"),  
 };
 
 const agent = { Auth, requests, Subjects };
