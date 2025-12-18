@@ -94,7 +94,9 @@ const InteractiveMeshPage = () => {
     });
 
     Promise.all([loadSubjects, loadPreRequisites, loadPostRequisites])
-      .catch(() => {})
+      .catch((error) => {
+        console.error('❌ Error cargando datos:', error); 
+      })
       .finally(() => setIsLoading(false));
   }, []);
 
