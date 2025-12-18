@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+console.log('🔗 Axios baseURL:', axios.defaults.baseURL);
 axios.defaults.withCredentials = true;
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
