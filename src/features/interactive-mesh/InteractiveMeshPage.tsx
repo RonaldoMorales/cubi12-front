@@ -81,6 +81,7 @@ const InteractiveMeshPage = () => {
     setIsLoading(true);
 
     const loadSubjects = agent.Subjects.list().then((res: Subject[]) => {
+      console.log('📦 Respuesta completa de Subjects:', res);
       res.forEach((s) => (s.name = subjectsCapitalize(s.name)));
       setSubjects(res);
     });
