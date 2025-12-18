@@ -81,11 +81,14 @@ const InteractiveMeshPage = () => {
     setIsLoading(true);
 
     const loadSubjects = agent.Subjects.list().then((res: Subject[]) => {
-      console.log('📦 Respuesta completa de Subjects:', res);
+      console.log('📦 Tipo de respuesta:', typeof res);
+      console.log('📦 Es array?:', Array.isArray(res));
+      console.log('📦 Contenido completo:', res);
+      console.log('📦 Primeros 100 caracteres:', JSON.stringify(res).substring(0, 100));
+      
       res.forEach((s) => (s.name = subjectsCapitalize(s.name)));
       setSubjects(res);
     });
-
     const loadPreRequisites = agent.Subjects.preRequisites().then((res) => {
       preRequisites.current = res;
     });
